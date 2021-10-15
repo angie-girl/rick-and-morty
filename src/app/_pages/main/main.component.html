@@ -1,8 +1,8 @@
 <div class="container">
-    <div class="row justify-content-center mb-5">
+    <div class="row justify-content-center mt-95 mb-5">
         <div class="col-12 col-sm-9 col-md-7 col-lg-6 mb-4">
           <div class="card border-white text-center mx-auto">
-            <div class="card-body p-5">
+            <div (click)="goToCharacter()" class="card-body p-5" style="cursor: pointer;">
                 <img class="img-fluid" src="../../../assets/images/rick-i-morty-rodzinka.webp" alt="">
     
               <button class="btn btn-danger btn-md btn-block text-uppercase mt-3" type="submit">BOHATEROWIE</button>
@@ -11,7 +11,7 @@
         </div>
         <div class="col-12 col-sm-9 col-md-7 col-lg-6 mb-4">
             <div class="card border-white text-center mx-auto">
-              <div class="card-body p-5">
+              <div (click)="goToLocation()" class="card-body p-5" style="cursor: pointer;">
                 <img class="img-fluid" src="../../../assets/images/localization.jpeg" alt="">
       
                 <button class="btn btn-danger btn-md btn-block text-uppercase mt-3" type="submit">LOKACJE</button>
@@ -20,7 +20,7 @@
           </div>
           <div class="col-12 col-sm-9 col-md-7 col-lg-6 mb-4">
             <div class="card border-white text-center mx-auto">
-              <div class="card-body p-5">
+              <div (click)="goToEpisodes()" class="card-body p-5" style="cursor: pointer;">
                 <img class="img-fluid" src="../../../assets/images/episodes.jpeg" alt="">
       
                 <button class="btn btn-danger btn-md btn-block text-uppercase mt-3" type="submit">ODCINKI</button>
