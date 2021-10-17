@@ -1,1 +1,31 @@
-<p>location works!</p>
+<div class="container">
+    <div class="card mt-95 mb-70 p-4">
+
+        <div class="row">
+            <div class="col-12 col-sm-7">
+              <h3 class="py-3">Lokalizacje</h3>
+            </div>
+          </div>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Nazwa</th>
+                <th scope="col">Wymiar</th>
+                <th scope="col">Edycja</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let location of locations | paginate: { itemsPerPage: perPage, currentPage: p, totalItems: totalItems} ">
+                <td><a>{{location.name}}</a></td>
+                <td>{{location.dimension}}</td>
+                <td>
+                    <button class="btn btn-success btn-sm" title="Edit" type="button">Edytuj</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="d-flex justify-content-center mt-2">
+            <pagination-controls (pageChange)="getLocations($event)" [maxSize]="maxSize"></pagination-controls>
+          </div>
+    </div>
+</div>
