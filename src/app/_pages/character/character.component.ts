@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CharacterComponent implements OnInit {
   public characters: ICharacter[] = [];
+  public selectedCharacter: ICharacter | undefined;
   maxSize = 10;
   public perPage = 20;
   p: number = 1;
@@ -36,5 +37,10 @@ export class CharacterComponent implements OnInit {
       this.characters = res.results;
       this.totalItems = res.info.count;
     })
+  }
+
+  edit(character: ICharacter) {
+    this.selectedCharacter = character;
+    console.log(character);
   }
 }

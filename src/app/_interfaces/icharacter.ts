@@ -7,8 +7,14 @@ export interface ICharacter {
     species: string;
     type: string;
     gender: string;
-    // origin: IOrigin;
-    location: ILocation;
+    origin: {
+        name: string;
+        url: string;
+    };
+    location: {
+        name: string;
+        url: string;
+    };
     image: string;
     episode: [];
     url: string;
