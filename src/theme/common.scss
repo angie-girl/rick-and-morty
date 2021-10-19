@@ -1,0 +1,78 @@
+@import './variables';
+
+body {
+  font-family: $main-font;
+  background: linear-gradient(160deg, $dark-red 0%, $red 35%, $yellow 100%);
+  min-height: 100vh;
+}
+
+.mt-95 {
+  margin-top: 95px
+}
+.mb-100 {
+  margin-bottom: 100px;
+}
+
+/* Change default style in pagination */
+
+.ngx-pagination {
+  padding-left: 0px !important;
+  .current {
+      background: $yellow !important;
+  }
+}
+
+/* Change default style in form */
+label {
+  margin: 10px 0;
+}
+
+.form-control {
+    height: 43px;
+    color: $grey;
+    border-color: $light-grey;
+    &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: $light-grey;
+      opacity: 1; /* Firefox */
+    }
+  
+    &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+      color: $light-grey;
+    }
+  
+    &::-ms-input-placeholder { /* Microsoft Edge */
+      color: $light-grey;
+    }
+}
+
+/* Change box-shadow */
+.btn:focus, .btn-close:focus, .form-check-input:focus, .form-control:focus, .form-control.is-invalid:focus, .was-validated .form-control:invalid:focus {
+  box-shadow: none;
+}
+.form-control:focus {
+  border-color: $green;
+}
+
+
+/* Change input background colour for Chrome autocomplete */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active
+{
+ -webkit-box-shadow: 0 0 0px 1000px white inset;
+ transition: background-color 5000s ease-in-out 0s;
+}
+
+::-webkit-input-placeholder {
+  color: $blue;
+  }
+
+.modal-backdrop {
+  opacity: 0 !important;
+}
+
+span.active {
+  color: $blue;
+  font-weight: bold;
+}

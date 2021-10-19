@@ -1,20 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
+@import "theme/variables";
+@import "theme/common";
 
-body {
-    font-family: 'Rock Salt', cursive, sans-serif;
-    // background: linear-gradient(#e66465, #9198e5);
-    background: linear-gradient(160deg, rgba(36,30,0,1) 0%, rgba(121,9,33,1) 35%, rgba(255,169,0,1) 100%);
-    min-height: 100vh;
-
-}
-
-.btn:focus, .btn-close:focus {
-    box-shadow: none;
-}
-
-.mt-95 {
-    margin-top: 95px
-}
-.mb-70 {
-    margin-bottom: 70px;
-}

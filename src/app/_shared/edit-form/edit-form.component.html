@@ -1,0 +1,78 @@
+<div class="container">
+    <div class="card mt-95 p-4">
+        <div class="row">
+          <div class="col-12 col-sm-7 py-3">
+            <h3>Formularz</h3>
+          </div>
+        </div>
+        <div *ngIf="formSuccess" class="form-group">
+                    <span class="valid-feedback d-block alert alert-success" role="alert">
+                      <strong>Twoje zmiany zostały wysłane</strong>
+                    </span>
+        </div>
+        
+        <div class="row">
+          <div class="col-12 col-sm-12">
+            <div class="card c-brd-light">
+              <div class="card-body">
+                <form (ngSubmit)="submitHandler()" [formGroup]="editForm" class="row">
+                  <div class="col-12 col-md-6">
+                    <label class="c-dark">Nazwa</label>
+                    <div class="form-group">
+                      <input autocomplete="name"
+                             class="form-control {{name?.invalid && name?.touched ? 'is-invalid' : '' }} rounded"
+                             formControlName="name" name="name" placeholder="Nazwa"
+                             type="text"/>
+                      <span *ngIf="name?.errors?.required && name?.touched" class="invalid-feedback" role="alert">
+                                            <strong>Name is required</strong>
+                                            </span>
+                      <!-- <span *ngIf="name?.errors?.maxlength && name?.touched" class="invalid-feedback" role="alert">
+                                            <strong>{{ 'Max length of name is 20 characters' | translate}}</strong>
+                                            </span> -->
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label class="c-dark">Gatunek</label>
+                    <div class="form-group">
+                      <input autocomplete="species"
+                             class="form-control {{species?.invalid && species?.touched ? 'is-invalid' : '' }} rounded"
+                             formControlName="species" name="species" placeholder="Gatunek"
+                             type="text"/>
+                      <span *ngIf="species?.errors?.required && species?.touched" class="invalid-feedback" role="alert">
+                                              <strong>species is required</strong>
+                                            </span>
+                      <!-- <span *ngIf="species?.errors?.maxlength && species?.touched" class="invalid-feedback" role="alert">
+                                              <strong>{{ 'Max length of last name is 20 characters' | translate}}</strong>
+                                            </span> -->
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label class="c-dark">Status</label>
+                    <div class="form-group">
+                      <input autocomplete="status"
+                             class="form-control {{status?.invalid && status?.touched ? 'is-invalid' : '' }} rounded"
+                             formControlName="status" name="status" placeholder="status" type="text"/>
+                      <span *ngIf="status?.errors?.required && status?.touched" class="invalid-feedback" role="alert">
+                                              <strong>status is required</strong>
+                                            </span>
+                      <!-- <span *ngIf="status?.errors?.status && status?.touched" class="invalid-feedback" role="alert">
+                                              <strong>{{ 'The status address must be a valid status address.' | translate}}</strong>
+                                            </span> -->
+                    </div>
+                  </div>
+
+    
+        
+                  <div class="col-12">
+                    <!-- <app-server-errors [errors]="serverErrors"></app-server-errors> -->
+                  </div>
+                  <div class="col-12 d-flex justify-content-center justify-content-lg-end align-items-center mt-3">
+                    <button type="submit" class="btn btn-success my-2 my-sm-0 btn-lg px-4">Zapisz zmiany</button>
+                </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div> 
+</div>
