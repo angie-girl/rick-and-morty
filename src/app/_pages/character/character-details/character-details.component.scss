@@ -2,6 +2,7 @@
     border: none;
     .list-group-item {
         border-color: rgb(255,169,0);
+        border-width: 0 0 2px;
         @media screen and (min-width: 1200px) {
             padding: 1rem;
         }
