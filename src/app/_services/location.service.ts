@@ -10,6 +10,10 @@ export class LocationService {
 
   constructor(private http: HttpClient) { }
 
+  getLocation(id: number): Observable<any> {
+    return this.http.get<any>(`${environment.api_url}/location/${id}`);
+  }
+
   getLocations(params?: {
     count?: number,
     page?: number

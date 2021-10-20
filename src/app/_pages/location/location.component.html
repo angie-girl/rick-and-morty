@@ -17,7 +17,8 @@
             </thead>
             <tbody>
               <tr *ngFor="let location of locations | paginate: { itemsPerPage: perPage, currentPage: p, totalItems: totalItems} ">
-                <td><a>{{location.name}}</a></td>
+                <td><a [routerLink]="['/location', location.id]" class="btn p-0">
+                    {{location.name}}</a></td>
                 <td>{{location.dimension}}</td>
                 <td>
                     <button class="btn btn-success btn-sm" title="Edit" type="button">Edytuj</button>

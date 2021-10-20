@@ -15,6 +15,7 @@ import { LocationComponent } from './_pages/location/location.component';
 import { EpisodeComponent } from './_pages/episode/episode.component';
 import { EditFormComponent } from './_shared/edit-form/edit-form.component';
 import { CharacterDetailsComponent } from './_pages/character/character-details/character-details.component';
+import { LocationDetailsComponent } from './_pages/location/location-details/location-details.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { CharacterDetailsComponent } from './_pages/character/character-details/
     LocationComponent,
     EpisodeComponent,
     EditFormComponent,
-    CharacterDetailsComponent
+    CharacterDetailsComponent,
+    LocationDetailsComponent
   ],
   imports: [
     BrowserModule,
