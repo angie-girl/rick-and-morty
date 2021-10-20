@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CharacterDetailsComponent } from './_pages/character/character-details/character-details.component';
 import { CharacterComponent } from './_pages/character/character.component';
+import { EpisodeDetailsComponent } from './_pages/episode/episode-details/episode-details.component';
 import { EpisodeComponent } from './_pages/episode/episode.component';
 import { LocationDetailsComponent } from './_pages/location/location-details/location-details.component';
 import { LocationComponent } from './_pages/location/location.component';
@@ -15,6 +16,7 @@ const routes: Routes = [
   {path: 'location', component: LocationComponent},
   {path: 'location/:id', component: LocationDetailsComponent},
   {path: 'episode', component: EpisodeComponent},
+  {path: 'episode/:id', component: EpisodeDetailsComponent},
   {path: 'edit', component: EditFormComponent}
 ];
 

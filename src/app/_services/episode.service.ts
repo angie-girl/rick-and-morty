@@ -10,6 +10,10 @@ export class EpisodeService {
 
   constructor(private http: HttpClient) { }
 
+  getEpisode(id: number): Observable<any> {
+    return this.http.get<any>(`${environment.api_url}/episode/${id}`);
+  }
+
   getEpisodes(params?: {
     count?: number,
     page?: number

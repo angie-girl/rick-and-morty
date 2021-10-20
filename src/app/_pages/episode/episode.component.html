@@ -17,7 +17,8 @@
             </thead>
             <tbody>
               <tr *ngFor="let episode of episodes | paginate: { itemsPerPage: perPage, currentPage: p, totalItems: totalItems} ">
-                <td><a>{{episode.name}}</a></td>
+                <td><a [routerLink]="['/episode', episode.id]" class="btn p-0">
+                  {{episode.name}}</a></td>
                 <td>{{episode.episode}}</td>
                 <td>
                     <button class="btn btn-success btn-sm" title="Edit" type="button">Edytuj</button>
