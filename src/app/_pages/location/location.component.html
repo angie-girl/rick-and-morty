@@ -6,6 +6,10 @@
               <h3 class="py-3">Lokalizacje</h3>
             </div>
         </div>
+        <div class="d-flex d-sm-none justify-content-center mb-2">
+          <img src="../../../assets/icons/arrow-left-solid.svg" alt="arrow_left">
+          <img src="../../../assets/icons/arrow-right-solid.svg" alt="arrow_right">
+        </div>
         <div class="table-responsive card c-brd-light border-0">
           <table class="table table-responsive">
             <thead>
@@ -21,7 +25,7 @@
                     {{location.name}}</a></td>
                 <td>{{location.dimension}}</td>
                 <td>
-                    <button class="btn btn-success btn-sm" title="Edit" type="button">Edytuj</button>
+                    <a [routerLink]="['/location', location.id, 'edit']" class="btn btn-success btn-sm" title="Edit" type="button">Edytuj</a>
                 </td>
               </tr>
             </tbody>

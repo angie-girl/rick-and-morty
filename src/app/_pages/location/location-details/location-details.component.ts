@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { ILocation } from 'src/app/_interfaces/ilocation';
 import { LocationService } from 'src/app/_services/location.service';
 
@@ -12,23 +12,18 @@ export class LocationDetailsComponent implements OnInit {
   public location: ILocation | undefined;
   public id: number | any;
 
-  constructor(private route: ActivatedRoute, private locationService: LocationService, private router: Router) { 
-    this.route.params.subscribe(params => {
-      this.id = params['id'];
-    });
-  }
+  constructor(private route: ActivatedRoute, private locationService: LocationService) { }
 
   ngOnInit(): void {
-    this.getLocation();
+    this.route.params.subscribe(params => {
+      this.id = params['id'];
+      this.getLocation();
+    });
   }
 
   getLocation(){
     this.locationService.getLocation(this.id).subscribe(res => {
       this.location = res;
     });
-  }
-
-  goToEdit() {
-    this.router.navigate(['/edit'])
   }
 }

@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="card mt-95 p-4">
+        <div class="row">
+          <div class="col-12 col-sm-7 py-3">
+            <h3>Formularz</h3>
+          </div>
+        </div>
+        <div *ngIf="formSuccess" class="form-group">
+                    <span class="valid-feedback d-block alert alert-success" role="alert">
+                      <strong>Twoje zmiany zostały wysłane</strong>
+                    </span>
+        </div>
+        
+        <div class="row">
+          <div class="col-12 col-sm-12">
+            <div class="card c-brd-light">
+              <div class="card-body">
+                <form (ngSubmit)="submitHandler()" [formGroup]="editForm" class="row">
+                  <div class="col-12 col-md-6">
+                    <label class="c-dark">Nazwa</label>
+                    <div class="form-group">
+                      <input autocomplete="name"
+                             class="form-control {{name?.invalid && name?.touched ? 'is-invalid' : '' }} rounded"
+                             formControlName="name" name="name" placeholder="Nazwa"
+                             type="text"/>
+                      <span *ngIf="name?.errors?.required && name?.touched" class="invalid-feedback" role="alert">
+                                            <strong>Nazwa jest wymagana</strong>
+                                            </span>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label class="c-dark">Wymiar</label>
+                    <div class="form-group">
+                      <input autocomplete="dimension"
+                             class="form-control {{dimension?.invalid && dimension?.touched ? 'is-invalid' : '' }} rounded"
+                             formControlName="dimension" name="dimension" placeholder="Gatunek"
+                             type="text"/>
+                      <span *ngIf="dimension?.errors?.required && dimension?.touched" class="invalid-feedback" role="alert">
+                                              <strong>Wymiar jest wymagany</strong>
+                                            </span>
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                  </div>
+                  <div class="col-12 d-flex justify-content-center justify-content-lg-end align-items-center mt-3">
+                    <button type="submit" class="btn btn-success my-2 my-sm-0 btn-lg px-4">Zapisz zmiany</button>
+                </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div> 
+</div>
+
+
