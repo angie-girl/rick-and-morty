@@ -1,0 +1,6 @@
+img {
+    width: 5%;
+    &:first-child {
+        margin-right: 10px;
+    }
+}
