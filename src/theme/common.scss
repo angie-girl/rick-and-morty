@@ -45,6 +45,11 @@ label {
     }
 }
 
+/* Change font-weight in cards items */
+.list-group-item {
+  font-weight: bold;
+}
+
 /* Change box-shadow */
 .btn:focus, .btn-close:focus, .form-check-input:focus, .form-control:focus, .form-control.is-invalid:focus, .was-validated .form-control:invalid:focus {
   box-shadow: none;
@@ -52,7 +57,6 @@ label {
 .form-control:focus {
   border-color: $green;
 }
-
 
 /* Change input background colour for Chrome autocomplete */
 input:-webkit-autofill,

@@ -1,11 +1,11 @@
 <div class="container">
     <div class="card mt-95 mb-100 p-4">
         <div class="row">
-          <div class="col-12 col-sm-8 d-flex justify-content-center justify-content-md-start py-3">
+          <div class="col-12 col-sm-8 d-flex justify-content-center justify-content-md-start align-items-center py-3">
             <h3>Informacje o bohaterze</h3>
           </div>
-          <div class="col-12 col-sm-4 py-3 d-flex justify-content-end">
-            <button (click)="goToEdit()" class="btn btn-success btn-sm" data-placement="top" data-toggle="tooltip" title="Edit" type="button">Edytuj</button>
+          <div class="col-12 col-sm-4 py-3 d-flex justify-content-end align-items-center">
+            <a [routerLink]="['/character', character?.id, 'edit']" class="btn btn-success btn-sm" title="Edit" type="button">Edytuj</a>
           </div>
         </div>
         
@@ -14,7 +14,7 @@
             <div class="card c-brd-light">
                 <div class="row">
                     <div class="col-12 col-md-6">
-                        <img [src]="character?.image" class="card-img-top" alt="...">
+                        <img [src]="character?.image" class="card-img-top" alt="character_image">
                     </div>
                     <div class="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center">
                         <h3 class="card-title py-4">{{character?.name}}</h3>

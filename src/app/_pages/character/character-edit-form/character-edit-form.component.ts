@@ -1,22 +1,22 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Subject } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 import { CustomValidator } from 'src/app/_helpers/custom-validator';
 import { ICharacter } from 'src/app/_interfaces/icharacter';
+import { CharacterService } from 'src/app/_services/character.service';
 
 @Component({
-  selector: 'app-edit-form',
-  templateUrl: './edit-form.component.html',
-  styleUrls: ['./edit-form.component.scss']
+  selector: 'app-character-edit-form',
+  templateUrl: './character-edit-form.component.html',
+  styleUrls: ['./character-edit-form.component.scss']
 })
-export class EditFormComponent implements OnInit {
-  @Input() character: ICharacter | undefined;
-  @Output() event: Subject<boolean> = new Subject<boolean>();
-
+export class CharacterEditFormComponent implements OnInit {
   editForm: FormGroup;
   formSuccess = false;
+  public id: number | any;
+  public character: ICharacter | any;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private characterService: CharacterService, private route: ActivatedRoute) {
 
     this.editForm = this.fb.group({
       name: ['', [
@@ -32,6 +32,17 @@ export class EditFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      this.id = params['id'];
+      this.getCharacter();
+    });
+  }
+
+  getCharacter(){
+    this.characterService.getCharacter(this.id).subscribe(res => {
+      this.character = res;
+      this.editForm.patchValue(this.character)
+    });
   }
 
   submitHandler(): void {

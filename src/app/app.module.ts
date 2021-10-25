@@ -13,10 +13,12 @@ import { MainComponent } from './_pages/main/main.component';
 import { CharacterComponent } from './_pages/character/character.component';
 import { LocationComponent } from './_pages/location/location.component';
 import { EpisodeComponent } from './_pages/episode/episode.component';
-import { EditFormComponent } from './_shared/edit-form/edit-form.component';
 import { CharacterDetailsComponent } from './_pages/character/character-details/character-details.component';
 import { LocationDetailsComponent } from './_pages/location/location-details/location-details.component';
 import { EpisodeDetailsComponent } from './_pages/episode/episode-details/episode-details.component';
+import { CharacterEditFormComponent } from './_pages/character/character-edit-form/character-edit-form.component';
+import { EpisodeEditFormComponent } from './_pages/episode/episode-edit-form/episode-edit-form.component';
+import { LocationEditFormComponent } from './_pages/location/location-edit-form/location-edit-form.component';
 
 
 @NgModule({
@@ -28,10 +30,12 @@ import { EpisodeDetailsComponent } from './_pages/episode/episode-details/episod
     CharacterComponent,
     LocationComponent,
     EpisodeComponent,
-    EditFormComponent,
     CharacterDetailsComponent,
     LocationDetailsComponent,
-    EpisodeDetailsComponent
+    EpisodeDetailsComponent,
+    CharacterEditFormComponent,
+    EpisodeEditFormComponent,
+    LocationEditFormComponent
   ],
   imports: [
     BrowserModule,

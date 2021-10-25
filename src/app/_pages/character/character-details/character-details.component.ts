@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { ICharacter } from 'src/app/_interfaces/icharacter';
 import { CharacterService } from 'src/app/_services/character.service';
 
@@ -12,14 +12,13 @@ export class CharacterDetailsComponent implements OnInit {
   public character: ICharacter | undefined;
   public id: number | any;
 
-  constructor(private route: ActivatedRoute, private characterService: CharacterService, private router: Router) { 
-    this.route.params.subscribe(params => {
-      this.id = params['id'];
-    });
-  }
+  constructor(private route: ActivatedRoute, private characterService: CharacterService) { }
 
   ngOnInit(): void {
-    this.getCharacter();
+    this.route.params.subscribe(params => {
+      this.id = params['id'];
+      this.getCharacter();
+    });
   }
 
   getCharacter(){
@@ -27,9 +26,4 @@ export class CharacterDetailsComponent implements OnInit {
       this.character = res;
     });
   }
-
-  goToEdit() {
-    this.router.navigate(['/edit'])
-  }
-
 }
