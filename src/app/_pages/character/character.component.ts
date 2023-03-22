@@ -9,11 +9,11 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./character.component.scss']
 })
 export class CharacterComponent implements OnInit {
-  public characters: ICharacter[] = [];
+  characters: ICharacter[] = [];
   maxSize = 10;
-  public perPage = 20;
+  perPage = 20;
   p: number = 1;
-  public totalItems = 0;
+  totalItems = 0;
 
   constructor(private characterService: CharacterService, private route: ActivatedRoute) { }
 

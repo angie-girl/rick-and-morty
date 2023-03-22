@@ -9,11 +9,11 @@ import { EpisodeService } from 'src/app/_services/episode.service';
   styleUrls: ['./episode.component.scss']
 })
 export class EpisodeComponent implements OnInit {
-  public episodes: IEpisode[] = [];
+  episodes: IEpisode[] = [];
   maxSize = 10;
-  public perPage = 20;
+  perPage = 20;
   p: number = 1;
-  public totalItems = 0;
+  totalItems = 0;
 
   constructor(private episodeService: EpisodeService, private route: ActivatedRoute) { }
 

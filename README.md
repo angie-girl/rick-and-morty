@@ -1,7 +1,5 @@
-# rick-and-morty
+# Rick & Morty
 [![forthebadge](https://forthebadge.com/images/badges/made-with-typescript.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/powered-by-overtime.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/built-by-developers.svg)](https://forthebadge.com)
-
-Project prepared for the purposes of recruitment.
 
 ## Reference documentation:
 List of technologies and version used in this project
@@ -13,6 +11,16 @@ List of technologies and version used in this project
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
+
+## Installation
+```bash
+# Fist setup your environment
+npm install -g @angular/cli@12
+npm install -g @ionic/cli
+
+# Now install project packages
+npm install
+```
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 

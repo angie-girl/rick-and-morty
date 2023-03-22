@@ -13,8 +13,8 @@ import { LocationService } from 'src/app/_services/location.service';
 export class LocationEditFormComponent implements OnInit {
   editForm: FormGroup;
   formSuccess = false;
-  public id: number | any;
-  public location: ILocation | any;
+  id: number | any;
+  location: ILocation | any;
 
   constructor(private fb: FormBuilder, private locationService: LocationService, private route: ActivatedRoute) {
 
@@ -35,13 +35,6 @@ export class LocationEditFormComponent implements OnInit {
     });
   }
 
-  getLocation(){
-    this.locationService.getLocation(this.id).subscribe(res => {
-      this.location = res;
-      this.editForm.patchValue(this.location)
-    });
-  }
-
   submitHandler(): void {
     if (this.editForm.valid) {
       const data = this.editForm.value;
@@ -58,5 +51,12 @@ export class LocationEditFormComponent implements OnInit {
 
   get dimension() {
     return this.editForm.get('dimension');
+  }
+
+  private getLocation(){
+    this.locationService.getLocation(this.id).subscribe(res => {
+      this.location = res;
+      this.editForm.patchValue(this.location)
+    });
   }
 }

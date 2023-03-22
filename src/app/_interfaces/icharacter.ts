@@ -1,5 +1,3 @@
-import { ILocation } from "./ilocation";
-
 export interface ICharacter {
     id: number;
     name: string;

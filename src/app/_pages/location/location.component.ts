@@ -9,11 +9,11 @@ import { LocationService } from 'src/app/_services/location.service';
   styleUrls: ['./location.component.scss']
 })
 export class LocationComponent implements OnInit {
-  public locations: ILocation[] = [];
+  locations: ILocation[] = [];
   maxSize = 10;
-  public perPage = 20;
+  perPage = 20;
   p: number = 1;
-  public totalItems = 0;
+  totalItems = 0;
 
   constructor(private locationService: LocationService, private route: ActivatedRoute) { }
 

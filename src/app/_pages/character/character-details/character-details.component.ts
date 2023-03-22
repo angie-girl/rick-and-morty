@@ -9,8 +9,8 @@ import { CharacterService } from 'src/app/_services/character.service';
   styleUrls: ['./character-details.component.scss']
 })
 export class CharacterDetailsComponent implements OnInit {
-  public character: ICharacter | undefined;
-  public id: number | any;
+  character: ICharacter | undefined;
+  id: number | any;
 
   constructor(private route: ActivatedRoute, private characterService: CharacterService) { }
 
@@ -21,7 +21,7 @@ export class CharacterDetailsComponent implements OnInit {
     });
   }
 
-  getCharacter(){
+  private getCharacter(){
     this.characterService.getCharacter(this.id).subscribe(res => {
       this.character = res;
     });

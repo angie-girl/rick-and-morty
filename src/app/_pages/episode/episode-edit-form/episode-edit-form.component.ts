@@ -13,8 +13,8 @@ import { EpisodeService } from 'src/app/_services/episode.service';
 export class EpisodeEditFormComponent implements OnInit {
   editForm: FormGroup;
   formSuccess = false;
-  public id: number | any;
-  public episodes: IEpisode | any;
+  id: number | any;
+  episodes: IEpisode | any;
 
   constructor(private fb: FormBuilder, private episodeService: EpisodeService, private route: ActivatedRoute) {
 
@@ -35,13 +35,6 @@ export class EpisodeEditFormComponent implements OnInit {
     });
   }
 
-  getEpisode(){
-    this.episodeService.getEpisode(this.id).subscribe(res => {
-      this.episodes = res;
-      this.editForm.patchValue(this.episodes)
-    });
-  }
-
   submitHandler(): void {
     if (this.editForm.valid) {
       const data = this.editForm.value;
@@ -58,5 +51,12 @@ export class EpisodeEditFormComponent implements OnInit {
 
   get episode() {
     return this.editForm.get('episode');
+  }
+
+  private getEpisode(){
+    this.episodeService.getEpisode(this.id).subscribe(res => {
+      this.episodes = res;
+      this.editForm.patchValue(this.episodes)
+    });
   }
 }

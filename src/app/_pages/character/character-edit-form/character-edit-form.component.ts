@@ -13,8 +13,8 @@ import { CharacterService } from 'src/app/_services/character.service';
 export class CharacterEditFormComponent implements OnInit {
   editForm: FormGroup;
   formSuccess = false;
-  public id: number | any;
-  public character: ICharacter | any;
+  id: number | any;
+  character: ICharacter | any;
 
   constructor(private fb: FormBuilder, private characterService: CharacterService, private route: ActivatedRoute) {
 
@@ -38,13 +38,6 @@ export class CharacterEditFormComponent implements OnInit {
     });
   }
 
-  getCharacter(){
-    this.characterService.getCharacter(this.id).subscribe(res => {
-      this.character = res;
-      this.editForm.patchValue(this.character)
-    });
-  }
-
   submitHandler(): void {
     if (this.editForm.valid) {
       const data = this.editForm.value;
@@ -65,5 +58,12 @@ export class CharacterEditFormComponent implements OnInit {
 
   get status() {
     return this.editForm.get('status');
+  }
+
+  private getCharacter(){
+    this.characterService.getCharacter(this.id).subscribe(res => {
+      this.character = res;
+      this.editForm.patchValue(this.character)
+    });
   }
 }

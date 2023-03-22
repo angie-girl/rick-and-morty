@@ -9,8 +9,8 @@ import { LocationService } from 'src/app/_services/location.service';
   styleUrls: ['./location-details.component.scss']
 })
 export class LocationDetailsComponent implements OnInit {
-  public location: ILocation | undefined;
-  public id: number | any;
+  location: ILocation | undefined;
+  id: number | any;
 
   constructor(private route: ActivatedRoute, private locationService: LocationService) { }
 
@@ -21,7 +21,7 @@ export class LocationDetailsComponent implements OnInit {
     });
   }
 
-  getLocation(){
+  private getLocation(){
     this.locationService.getLocation(this.id).subscribe(res => {
       this.location = res;
     });

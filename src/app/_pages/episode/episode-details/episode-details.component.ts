@@ -10,8 +10,8 @@ import * as moment from "moment";
   styleUrls: ['./episode-details.component.scss']
 })
 export class EpisodeDetailsComponent implements OnInit {
-  public episode: IEpisode | undefined;
-  public id: number | any;
+  episode: IEpisode | undefined;
+  id: number | any;
 
   constructor(private route: ActivatedRoute, private episodeService: EpisodeService) { }
 
@@ -22,13 +22,13 @@ export class EpisodeDetailsComponent implements OnInit {
     });
   }
 
-  getEpisode(){
+  formatDate(air_data: Date | undefined): string {
+    return moment(air_data).format('DD MMMM YYYY')
+  }
+
+  private getEpisode(){
     this.episodeService.getEpisode(this.id).subscribe(res => {
       this.episode = res;
     });
-  }
-
-  formatDate(air_data: Date | undefined): string {
-    return moment(air_data).format('DD MMMM YYYY')
   }
 }
